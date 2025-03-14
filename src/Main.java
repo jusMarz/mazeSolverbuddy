@@ -10,15 +10,16 @@ public class Main {
     {
         String[][] maze = getMaze(".idea/TestCase.txt");
         printMaze(maze);
-        MazeSolver buddy = new MazeSolver(maze,"Buddy");
+        MazeSolver Jack = new MazeSolver(maze,"Jack");
+//        Adner.solveMaze();
+//        Adner.showSteps();
 
+        Jack.report(0);
+        Jack.solveMaze();
+        Jack.report(0);
+        Jack.showSteps();
 
-        buddy.report();
-        System.out.println(buddy.checkPossibleMovementOptions());
-        buddy.determineNextMove(buddy.checkPossibleMovementOptions());
-//        buddy.report();
-
-    }
+        }
     public static String[][] getMaze(String fileName) {
         File f = new File(fileName);
         Scanner s = null;
