@@ -89,20 +89,26 @@ public class MazeSolver {
 
     public String determineNextMove (ArrayList<String> possibleMoves)
     {
-        if((footprints.size() != 0)) {
-            for (int i = 0; i < possibleMoves.size(); ) {
-                if (possibleMoves.get(i).equals(footprints.get(footprints.size() - 1))) {
-                    possibleMoves.remove(i);
+        for(int a = 1; a < possibleMoves.size();)
+        {
+            for(int b = 0; b < possibleMoves.size();)
+            {
+                if (possibleMoves.get(b).equals(footprints.get(footprints.size() - a))) {
+                    possibleMoves.remove(b);
                 } else {
-                    i++;
+                    b++;
                 }
             }
         }
-        if (possibleMoves.size()==1)
+        if (possibleMoves.size()!=1)
         {
-            return possibleMoves.get(0);
+            return "nah";
         }
-        return "";
+        else
+        {
+           return  possibleMoves.get(0);
+        }
+
     }
 
     public static String cords(int y, int x)

@@ -11,8 +11,6 @@ public class Main {
         String[][] maze = getMaze(".idea/TestCase.txt");
         printMaze(maze);
         MazeSolver Jack = new MazeSolver(maze,"Jack");
-//        Adner.solveMaze();
-//        Adner.showSteps();
 
         Jack.report(0);
         Jack.solveMaze();
